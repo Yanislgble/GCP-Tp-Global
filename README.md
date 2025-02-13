@@ -25,6 +25,8 @@ Le script terraform utilisera packer pour génrérer l'instance VM hébergeant l
 
 Packer utilsira un script ansible comme provisioner pour configurer la serveur web basé sur l'OS ubuntu en dernière version disponible.
 
+Le code de l'application (serveur web en go) est récupérer sur le point de partage de Quentin SWIECH ici : "https://storage.googleapis.com/q-sw-cesi-formation-2025/app.tar.gz"
+
 
 
 
