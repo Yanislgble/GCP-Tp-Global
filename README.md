@@ -4,7 +4,7 @@ TP du 12/02/2025 avec Quentin SWIECH
 Groupe 2 personnes : 
 - Arthur PARENT
 
-- Yannis LEGEMBLE
+- Yanis LEGEMBLE
 
 OBJECTIF
 =========
