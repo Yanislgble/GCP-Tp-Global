@@ -19,6 +19,7 @@ Schéma global de l'infrastructure :
 ![image](https://github.com/user-attachments/assets/1d960920-cf13-484f-bd31-a7abafce9340)
 
 Le script terraform permettra uniquement le déploiement de l'infrastructure de gauche (dans le projet cloud-devops-example-prod) en vert sur le schéma précédent.
+
 L'infrastrucuture du projet de droite (dans le projet cloud-devops-example-prod) en rouge sur le schéma précédent, a été faite à la main humaine.
 
 
