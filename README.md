@@ -5,6 +5,13 @@ OBJECTIF
 =========
 Ce git a pour but de permettre le déploiement automatique d'une infrastructure cloud hébergeant un serveur web codé en go.
 
+Schéma global de l'infrastructure :
+![image](https://github.com/user-attachments/assets/1d960920-cf13-484f-bd31-a7abafce9340)
+
+Le script terraform permettra uniquement le déploiement de l'infrastructure de gauche (dans le projet cloud-devops-example-prod) en vert sur le schéma précédent.
+
+L'infrastrucuture du projet de droite (dans le projet cloud-devops-example-prod) en rouge sur le schéma précédent, a été faite à la main humaine.
+
 MODE OPERATOIRE
 ===============
 
@@ -15,12 +22,7 @@ Le script terraform utilisera packer pour génrérer l'instance VM hébergeant l
 Packer utilsira un script ansible comme provisioner pour configurer la serveur web basé sur l'OS ubuntu en dernière version disponible.
 
 
-Schéma global de l'infrastructure :
-![image](https://github.com/user-attachments/assets/1d960920-cf13-484f-bd31-a7abafce9340)
 
-Le script terraform permettra uniquement le déploiement de l'infrastructure de gauche (dans le projet cloud-devops-example-prod) en vert sur le schéma précédent.
-
-L'infrastrucuture du projet de droite (dans le projet cloud-devops-example-prod) en rouge sur le schéma précédent, a été faite à la main humaine.
 
 
 TACHES REALISEES
