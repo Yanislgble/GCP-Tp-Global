@@ -1,6 +1,11 @@
 # GCP-Tp-Global
 TP du 12/02/2025 avec Quentin SWIECH
 
+Groupe 2 personnes : 
+- Arthur PARENT
+
+- Yannis LEGEMBLE
+
 OBJECTIF
 =========
 Ce git a pour but de permettre le déploiement automatique d'une infrastructure cloud hébergeant un serveur web codé en go.
