@@ -16,9 +16,13 @@ MODE OPERATOIRE
 ===============
 
 Le dépoiement de l'infrastructure sera effectué par un trigger Cloud Build.
+
 Le trigger cloud build se basera sur ce dépôt git.
+
 Le trigger cloudlancera un script terraform.
+
 Le script terraform utilisera packer pour génrérer l'instance VM hébergeant le serveur web.
+
 Packer utilsira un script ansible comme provisioner pour configurer la serveur web basé sur l'OS ubuntu en dernière version disponible.
 
 
