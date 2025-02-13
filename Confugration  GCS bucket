@@ -1,0 +1,11 @@
+gsutil mb -p cloud-devops-yanisarthur-ops -l europe-west9 gs://bucket-terrform-yanisarthur
+
+gsutil iam ch user:windploke@gmail.com:roles/storage.objectAdmin gs://bucket-terrform-yanisarthur
+gsutil iam ch user:yanis.lgb@gmail.com:roles/storage.objectAdmin gs://bucket-terrform-yanisarthur
+
+gsutil iam ch serviceAccount:terraform-service-account@cloud-devops-yanisarthur-ops.iam.gserviceaccount.com:roles/storage.objectAdmin gs://bucket-terrform-yanisarthur
+gsutil iam ch serviceAccount:terraform-service-account@cloud-devops-yanisarthur-ops.iam.gserviceaccount.com:roles/storage.admin gs://bucket-terrform-yanisarthur
+gsutil iam ch serviceAccount:terraform-service-account@cloud-devops-yanisarthur-ops.iam.gserviceaccount.com:roles/storage.objectViewer gs://bucket-terrform-yanisarthur
+
+
+gsutil versioning set on gs://bucket-terrform-yanisarthur
