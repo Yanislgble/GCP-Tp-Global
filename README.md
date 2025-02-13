@@ -1,11 +1,10 @@
 # GCP-Tp-Global
 TP du 12/02/2025 avec Quentin SWIECH
-=========
+
 OBJECTIF
 =========
 Ce git a pour but de permettre le déploiement automatique d'une infrastructure cloud hébergeant un serveur web codé en go.
 
-===============
 MODE OPERATOIRE
 ===============
 
@@ -22,7 +21,7 @@ Schéma global de l'infrastructure :
 Le script terraform permettra uniquement le déploiement de l'infrastructure de gauche (dans le projet cloud-devops-example-prod) en vert sur le schéma précédent.
 L'infrastrucuture du projet de droite (dans le projet cloud-devops-example-prod) en rouge sur le schéma précédent, a été faite à la main humaine.
 
-================
+
 TACHES REALISEES
 ================
 - Fonctionnement du serveur web en mode daemon.
@@ -30,14 +29,14 @@ TACHES REALISEES
 - Provisionnement de l'instance VM par packer
 - Configuration du buckete GCS pour terraform. 
 
-==============================
+
 TACHES EN COURS DE REALISATION
 ==============================
 - Utilisation d'un script Terraform pour le déploiement de l'infrastructure (en cours de test, problème dépendance entre les modules en cours de résolution).
 - Utilisation de cloud build pour déclencher le déploiement de l'infrastructure (dépôt git connecté, trigger à configurer, fichier cloudbuild.yaml à créer)
 - Configuration de ce git pour son utilisation par Cloud Build
 
-====================
+
 TACHES NON REALISEES
 ====================
 - Configuraiton du cloud DNS
