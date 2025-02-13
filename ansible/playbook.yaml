@@ -1,0 +1,66 @@
+- name: Configuration de la VM
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Mise à jour de l'OS
+      apt:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Installer Go 1.24
+      shell: |
+        curl -L --url https://go.dev/dl/go1.24.0.linux-386.tar.gz -o /tmp/go1.24.0.linux-386.tar.gz
+        tar -C /usr/local -xzf /tmp/go1.24.0.linux-386.tar.gz
+        echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
+        source ~/.profile
+
+    - name: Créer dossier application
+      file:
+        path: /opt/myapp
+        state: directory
+
+    - name: Télécharger et extraire l'application Go
+      shell: |
+        curl -L https://storage.googleapis.com/q-sw-cesi-formation-2025/app.tar.gz -o /tmp/app.tar.gz
+        tar -xf /tmp/app.tar.gz -C /opt/myapp
+
+    - name: Ajouter le fichier de configuration
+      copy:
+        dest: /opt/config.yaml
+        content: |
+          image: "https://lemagdesanimaux.ouest-france.fr/images/dossiers/2021-02/licorne-065501.jpg"
+
+    - name: Compiler l'application Go
+      shell: |
+        cd /opt/myapp/src/
+        go build -o bin/app .
+
+    - name: Créer le service systemd
+      copy:
+        dest: /etc/systemd/system/myapp.service
+        content: |
+          [Unit]
+          Description=Mon application Go
+          After=network.target
+
+          [Service]
+          ExecStart=/opt/myapp/src/bin/app
+          Restart=always
+          WorkingDirectory=/opt/myapp
+          User=root
+
+          [Install]
+          WantedBy=multi-user.target
+
+    - name: Démarrer et activer le service
+      systemd:
+        name: myapp
+        enabled: yes
+        state: started
+
+    - name: Installer OpsAgent
+      shell: |
+        curl -So /tmp/add-google-cloud-ops-agent-repo.sh https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
+        bash /tmp/add-google-cloud-ops-agent-repo.sh --also-install
+        rm /tmp/add-google-cloud-ops-agent-repo.sh
