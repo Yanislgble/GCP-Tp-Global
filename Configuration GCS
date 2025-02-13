@@ -1,0 +1,14 @@
+gcloud iam service-accounts create terraform-service-account \
+  --display-name "Compte de service pour Terraform"
+  
+
+gcloud projects add-iam-policy-binding cloud-devops-yanisarthur-ops \
+  --member="serviceAccount:terraform-service-account@cloud-devops-yanisarthur-ops.iam.gserviceaccount.com" \
+  --role="roles/editor" \
+  --role="roles/compute.instanceAdmin.v1" \
+  --role="roles/storage.objectAdmin" \
+  --role="roles/iam.securityAdmin" \
+  --role="roles/resourcemanager.projectIamAdmin"
+ 
+gcloud iam service-accounts keys create terraform-key.json \
+  --iam-account=terraform-service-account@cloud-devops-yanisarthur-ops.iam.gserviceaccount.com
